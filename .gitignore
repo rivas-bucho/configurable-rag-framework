@@ -1,0 +1,20 @@
+# --- セキュリティ ---
+.env
+
+# --- 依存関係 ---
+venv/
+rag_final_env/
+
+# --- 生成されるデータ ---
+faiss_index/
+
+# --- Pythonキャッシュ ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- OS・IDE固有ファイル ---
+.vscode/
+.idea/
+.DS_Store

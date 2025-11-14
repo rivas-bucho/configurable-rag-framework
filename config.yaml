@@ -1,0 +1,50 @@
+# ドキュメントの読み込み設定
+document_loader:
+  path: "./knowledge_docs"
+  urls: []
+
+# テキスト分割の設定
+text_splitter:
+  splitter_type: "semantic" # "semantic" or "recursive"
+  recursive:
+    chunk_size: 500
+    chunk_overlap: 100
+  semantic:
+    breakpoint_threshold_type: "percentile" # "percentile", "standard_deviation", "interquartile"
+    breakpoint_threshold_amount: 80
+
+# 埋め込みモデルの設定
+embeddings:
+  provider: "google" # "google" or "huggingface"
+  model_name: "models/text-embedding-004"
+  # provider: "huggingface"
+  # model_name: "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+
+# ベクトルストアの設定
+vector_store:
+  path: "./faiss_index"
+
+# 検索(Retriever)設定
+retriever:
+  enable_hybrid_search: true
+  hybrid_search_weights: [0.6, 0.4] # [semantic, keyword]
+
+# Re-ranker設定
+reranker:
+  enable: true
+  provider: "cohere"
+  top_n: 5
+
+# 会話履歴(Memory)設定
+memory:
+  enable: true
+
+# LLMの設定
+llm:
+  model_name: "gemini-2.5-flash"
+  temperature: 0.1
+
+# プロンプトの設定
+prompt:
+  template_path: "./prompt_template.txt"
+  chat_template_path: "./prompt_chat_template.txt"

@@ -1,0 +1,20 @@
+# --- Core LangChain Libraries ---
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+langchain-cohere
+langchain-huggingface
+langchain-experimental
+langchain-text-splitters
+
+# --- Vector Store ---
+faiss-cpu
+
+# --- Utilities ---
+python-dotenv
+pyyaml
+pydantic
+argparse
+sentence-transformers
+bm25s
